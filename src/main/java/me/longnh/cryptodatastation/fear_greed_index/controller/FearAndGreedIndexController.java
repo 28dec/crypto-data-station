@@ -62,7 +62,7 @@ public class FearAndGreedIndexController {
                         .build())
                 .toList();
         fearAndGreedIndexEntityRepository.saveAll(fgiEntityList);
-        log.debug("done");
+        log.debug("donee");
         return ResponseEntity.ok(response.getBody());
     }
 }
