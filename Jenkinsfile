@@ -15,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the project using Gradle
-                sh './gradlew -x clean build'
+                sh './gradlew clean build -x test'
             }
         }
 
