@@ -1,5 +1,5 @@
 # Use a base image with Java
-FROM adoptopenjdk:17-jdk-hotspot
+FROM ghcr.io/graalvm/jdk:ol8-java17
 
 # Set the working directory
 WORKDIR /app
