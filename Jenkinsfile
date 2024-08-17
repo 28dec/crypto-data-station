@@ -40,14 +40,12 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sshagent (credentials: ['deploy-server-ssh']) {
                     sh '''
                     docker pull ghcr.io/28dec/crypto-data-station:${BUILD_NUMBER} &&
                     docker stop crypto-data-station || true &&
                     docker rm crypto-data-station || true &&
                     docker run -d --name crypto-data-station -p 7980:8080 ghcr.io/28dec/crypto-data-station:${BUILD_NUMBER}
                     '''
-                }
             }
         }
     }
