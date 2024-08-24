@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FearAndGreedIndexEntityRepository extends JpaRepository<FearAndGreedIndexEntity, String> {
     FearAndGreedIndexEntity findByDate(String date);
+
+    FearAndGreedIndexEntity findFirstByDate (String date);
 }

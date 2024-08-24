@@ -37,7 +37,7 @@ public class FearAndGreedIndexController {
             log.error("Invalid date param.", e);
             return ResponseEntity.badRequest().body(BaseResponse.builder().errorMessage("Bad param").build());
         }
-        FearAndGreedIndexEntity result = fearAndGreedIndexEntityRepository.findByDate(date);
+        FearAndGreedIndexEntity result = fearAndGreedIndexEntityRepository.findFirstByDate(date);
         return ResponseEntity.ok(BaseResponse.builder().data(result).build());
     }
 
