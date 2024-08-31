@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1725099858469-1" author="dxlongnh">
+        <createTable tableName="coin_price">
+            <column name="id" type="VARCHAR">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="coin_price_pk"/>
+            </column>
+            <column name="ticker" type="VARCHAR"/>
+            <column name="timeframe" type="VARCHAR"/>
+            <column name="candle_begin_datetime" type="VARCHAR"/>
+            <column name="candle_end_datetime" type="VARCHAR"/>
+            <column name="price_open" type="NUMBER"/>
+            <column name="price_high" type="NUMBER"/>
+            <column name="price_low" type="NUMBER"/>
+            <column name="price_close" type="NUMBER"/>
+            <column name="volume" type="NUMBER"/>
+            <column name="version" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1725099858469-2" author="dxlongnh">
+        <createTable tableName="fear_and_greed_index">
+            <column name="id" type="VARCHAR">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="fear_and_greed_index_pk"/>
+            </column>
+            <column name="fgi_number" type="INT"/>
+            <column name="fgi_classification" type="VARCHAR"/>
+            <column name="date" type="VARCHAR"/>
+            <column name="version" type="INT"/>
+            <column name="created_by" type="VARCHAR"/>
+            <column name="created_at" type="VARCHAR"/>
+            <column name="updated_by" type="VARCHAR"/>
+            <column name="updated_at" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
